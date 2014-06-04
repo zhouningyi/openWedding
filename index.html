@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>地球上的祝福</title>
+    <style>
+    @import url("./css/main.css");
+    @import url("./css/animation.css");
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <!-- <div id="back"></div> -->
+    <!-- <div id="paticle"></div> -->
+    <div id="webgl"></div>
+    <div id="add">
+    <canvas id='adds' width=1000 height=800></canvas>
+        <!-- <video src="MVI_1323.mp4" autoPlay="autoPlay" class="video"></video> -->
+        <div id="zhongtou" class="zhongtou"><a class="zhongtou" href="http://www.52zhongtou.com/ProjectView/Detail/pid/560"></a></div>
+    </div>
+    <div id="controller">
+    <div id="bg"></div>
+    <div id="article" class="article"></div>
+    <div id="articleTitle" class="articleTitle"></div>
+    <div id="start" class="start">开 始 ( s t a r t )</div>
+    <div id="push" ><a href="http://www.52zhongtou.com/ProjectView/Detail/pid/560">贡献祝福</a></div>
+    <div id="signature" class="signature">↑</div>
+    </div>
+    
+    <script src="lib/jquery-1.11.0.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/eventproxy.js"></script>
+    <script src="lib/color.js"></script>
+    <script src="lib/three.js"></script>
+    <script src="js/Interactions.js"></script>
+
+    <script src="js/background.js"></script>
+    <script src="js/GeoTexture.js"></script>
+    <script src="js/Three3D.js"></script>
+    <script src="js/Globe.js"></script>
+    <script src="js/drawCanvas.js"></script>
+    <script src="js/FloatTag.js"></script>
+    <script src="js/Controller.js"></script>
+    <script src="js/Slider.js"></script>
+    <script src="js/Text.js"></script>
+    
+
+    <!-- //////////////////data////////////////////-->
+    <script src="data/div/div.js"></script>
+    <script src="data/dictionary.js"></script>
+
+  <!-- //////////////////main////////////////////-->
+     <script src="js/GlobeScene.js"></script>
+    <script>
+    
+    window.globalEP = new EventProxy();
+    window.controller = new Controller(0,start);
+    window.background = new Background($('#background'));
+    window.slider = new Slider($('#add'),worldObj);
+    window.text = new Text('#add');
+
+   globalEP.on('globalEnd',function(){
+    slider.hide();
+    $('#add')
+    .css('backgroundImage',"url('../data/3worldwishes/6Asian/2Hangzhou|120|30/image/老板马云|杭州阿里巴巴.JPG')")
+    .css('backgroundSize', '100% auto');
+   
+
+   setTimeout(function(){
+    $('#add')
+    .css('backgroundImage',"url('../data/us/we.jpg')")
+    .css('backgroundSize', '100% auto');
+
+    text.text({region:'感谢',area:'站在我们的舞台上',name:'参与游戏的所有朋友'})
+
+   },2500);
+}
+   )
+    var three = new Three.Init(webgl);
+    window.globeScenes = new GlobeScenes(worldArr,worldObj,0);
+    
+    loop();
+
+    function loop() {
+    three.loop();
+    globeScenes.loop();
+    }
+
+    function start(){
+        globeScenes.start();
+    }
+
+
+    </script>
+<audio src="./data/3worldwishes/BreathAndLife.mp3" autoPlay="autoPlay" loop="loop"> </audio>>
+</body>
+
+</html>

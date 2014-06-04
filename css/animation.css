@@ -1,0 +1,13 @@
+.display-hide {
+	position: absolute;
+  -webkit-transition: all 0.2s ease-in-out;
+  opacity: 0;
+}
+.display-duration{
+	-webkit-transition: all 0.2s ease-in;
+}
+.display-show {
+	position: absolute;
+  -webkit-transition: all 0s ease-in-out;
+  opacity: 1;
+}
