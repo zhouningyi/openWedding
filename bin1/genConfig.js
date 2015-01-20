@@ -97,6 +97,7 @@ exports.write = function() {
 		traverPath(base1, arr);
 	}
 
+
 	fs.writeFileSync('../data/dictionary.js',
 		'window.worldObj =' + JSON.stringify(countries)+'\n'+'window.worldArr =' + JSON.stringify(countriesList));
 }
