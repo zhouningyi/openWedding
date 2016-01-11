@@ -1,4 +1,4 @@
-# [Open Wedding](http://openwedding.org/)
+# [Open Wedding(链接)](http://www.hotu.co/wedding/)
 ### openwedding.org    
 ##### 简单、开源、易用的结婚视频生成模版  文件夹－>交互版结婚创意网页
 ##### 将制作求婚、婚礼所用的视频，改成html5交互版，内容和功能不断更新
